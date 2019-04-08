@@ -21,7 +21,7 @@ defmodule Sample.MixProject do
 
   defp deps do
     [
-      {:n2o, github: "5HT/n2o"},
+      {:n2o, github: "synrc/n2o"},
       {:cowboy, "~> 2.0"}
     ]
   end
