@@ -1,21 +1,22 @@
-# Sample
+SAMPLE: Elixir N2O App
+======================
 
-**TODO: Add description**
+TL;DR Simple sample how to use N2O from Elixir.
 
-## Installation
+Run
+---
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `sample` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:sample, "~> 0.1.0"}
-  ]
-end
+```
+$ mix deps.get
+$ iex -S mix
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/sample](https://hexdocs.pm/sample).
+Then open `https://localhost:8001/app/index.htm`
 
+Credits
+-------
+
+* Yevhenii Kurtov
+* Maxim Sokhatsky
+
+OM A HUM
