@@ -7,7 +7,7 @@ defmodule Sample.Application do
 
     children = []
 
-    opts = [strategy: :one_for_one, name: Tchk.Supervisor]
+    opts = [strategy: :one_for_one, name: Sample.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
