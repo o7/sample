@@ -1,5 +1,5 @@
 defmodule Sample.Index do
-  use Sample.Ported, with: ~w|kvx n2o nitro client|a
+  use N2O, with: [:kvx, :n2o, :nitro]
 
   def event(:init) do
       room = N2O.session(:room)
