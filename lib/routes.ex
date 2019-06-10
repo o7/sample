@@ -1,8 +1,6 @@
 defmodule Sample.Routes do
 
-  require Record
-  import  Record, only: [defrecord: 2, extract: 2]
-  defrecord :cx, extract(:cx, from_lib: "n2o/include/n2o.hrl")
+  import N2O
 
   def finish(state, cx), do: {:ok, state, cx}
   def init(state, ctx) do
