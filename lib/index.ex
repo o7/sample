@@ -1,8 +1,5 @@
 defmodule Sample.Index do
-
-  import NITRO
-  import N2O
-  import KVX
+  use Sample.Ported, with: ~w|kvx n2o nitro client|a
 
   alias :nitro, as: NITRO
   alias :n2o,   as: N2O
@@ -40,5 +37,4 @@ defmodule Sample.Index do
   end
 
   def event(o), do: IO.inspect(o)
-
 end
