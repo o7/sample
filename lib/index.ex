@@ -4,35 +4,39 @@ defmodule Sample.Index do
   import N2O
   import KVX
 
+  alias :nitro, as: NITRO
+  alias :n2o,   as: N2O
+  alias :kvx,   as: KVX
+
   def event(:init) do
-      room = :n2o.session(:room)
-      :kvx.save(:kvx.writer(:nitro.to_binary(room)))
-      :n2o.reg({:topic,room})
-      :n2o.reg(:n2o.sid())
-      :nitro.clear (:history)
-      :nitro.update(:upload, upload())
-      :nitro.update(:heading, h2(id: :heading, body: room))
-      :nitro.update(:logout, button(id: :logout, postback: :logout, body: "Logout"))
-      :nitro.update(:send, button(id: :send, body: "Chat", postback: :chat, source: [:message]))
-      Enum.each :kvx.all(room), fn {:msg,_,u,m} -> event({:client,{u,m}}) end
+      room = N2O.session(:room)
+      KVX.save(KVX.writer(NITRO.to_binary(room)))
+      N2O.reg({:topic,room})
+      N2O.reg(:n2o.sid())
+      NITRO.clear (:history)
+      NITRO.update(:upload, upload())
+      NITRO.update(:heading, h2(id: :heading, body: room))
+      NITRO.update(:logout, button(id: :logout, postback: :logout, body: "Logout"))
+      NITRO.update(:send, button(id: :send, body: "Chat", postback: :chat, source: [:message]))
+      Enum.each KVX.all(room), fn {:msg,_,u,m} -> event({:client,{u,m}}) end
   end
 
   def event(:logout) do
-      :n2o.user([])
-      :nitro.redirect("/app/login.htm")
+      N2O.user([])
+      NITRO.redirect("/app/login.htm")
   end
 
   def event(:chat) do
-      room = :n2o.session(:room)
-      usr  = :n2o.user()
-      msg  = :nitro.q(:message)
-      :kvx.save(:kvx.add(writer(:kvx.writer(room), args: {:msg,:kvx.seq([],[]),usr,msg})))
-      :n2o.send({:topic,room},client(data: {usr,msg}))
+      room = N2O.session(:room)
+      usr  = N2O.user()
+      msg  = NITRO.q(:message)
+      KVX.save(KVX.add(writer(KVX.writer(room), args: {:msg,KVX.seq([],[]),usr,msg})))
+      N2O.send({:topic,room},client(data: {usr,msg}))
   end
 
   def event({:client,{usr,msg}}) do
-      :nitro.wire(jq(target: :message,method: [:focus,:select]))
-      :nitro.insert_top(:history, message(body: [author(body: usr), msg]))
+      NITRO.wire(jq(target: :message,method: [:focus,:select]))
+      NITRO.insert_top(:history, message(body: [author(body: usr), msg]))
   end
 
   def event(o), do: IO.inspect(o)
