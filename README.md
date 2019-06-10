@@ -29,8 +29,8 @@ Notes
 Credits
 -------
 
-* Aleksei Matiushkin
-* Yevhenii Kurtov
-* Maxim Sokhatsky
+* Aleksei Matiushkin @am-kantox
+* Yevhenii Kurtov @lessless
+* Maxim Sokhatsky @5HT
 
 OM A HUM
