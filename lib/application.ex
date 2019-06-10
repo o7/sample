@@ -2,7 +2,6 @@ defmodule Sample.Application do
   use Application
   def start(_,_) do
     start_cowboy()
-    :n2o.start([], [])
     Supervisor.start_link([], [strategy: :one_for_one, name: Sample.Supervisor])
   end
   defp start_cowboy() do
