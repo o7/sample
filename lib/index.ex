@@ -30,7 +30,6 @@ defmodule Sample.Index do
       room = :n2o.session(:room)
       usr  = :n2o.user()
       msg  = :nitro.q(:message)
-      :nitro.update(:heading, h2(id: :heading, body: room))
       :kvx.save(:kvx.add(writer(:kvx.writer(room), args: {:msg,:kvx.seq([],[]),usr,msg})))
       :n2o.send({:topic,room},client(data: {usr,msg}))
   end
