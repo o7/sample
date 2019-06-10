@@ -1,10 +1,6 @@
 defmodule Sample.Index do
   use Sample.Ported, with: ~w|kvx n2o nitro client|a
 
-  alias :nitro, as: NITRO
-  alias :n2o,   as: N2O
-  alias :kvx,   as: KVX
-
   def event(:init) do
       room = N2O.session(:room)
       KVX.save(KVX.writer(NITRO.to_binary(room)))
