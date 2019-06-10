@@ -4,13 +4,11 @@ defmodule Sample.Ported do
 
     Enum.map(imports, fn mod ->
       if Code.ensure_compiled?(mod) do
-        smod = to_string(mod)
-        upcased = Module.concat([String.upcase(smod)])
-        capitalized = Module.concat([String.capitalize(smod)])
+        upcased = Module.concat([String.upcase(to_string(mod))])
 
         quote do
           import unquote(upcased)
-          alias unquote(mod), as: unquote(capitalized)
+          alias unquote(mod), as: unquote(upcased)
         end
       end
     end)
