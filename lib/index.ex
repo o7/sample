@@ -10,15 +10,11 @@ defmodule Sample.Index do
       :n2o.reg({:topic,room})
       :n2o.reg(:n2o.sid())
       :nitro.clear (:history)
-      :nitro.update(:upload,  upload())
+      :nitro.update(:upload, upload())
       :nitro.update(:heading, h2(id: :heading, body: room))
-      :nitro.update(:logout,  button(id: :logout, postback: :logout,
-                              body: "Logout " <> :nitro.to_binary(:n2o.user())))
-      :nitro.update(:send,    button(id: :send, body: "Chat",
-                              postback: :chat, source: [:message]))
-
+      :nitro.update(:logout, button(id: :logout, postback: :logout, body: "Logout"))
+      :nitro.update(:send, button(id: :send, body: "Chat", postback: :chat, source: [:message]))
       Enum.each :kvx.all(room), fn {:msg,_,u,m} -> event({:client,{u,m}}) end
-
   end
 
   def event(:logout) do
