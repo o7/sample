@@ -1,5 +1,5 @@
 defmodule Sample.Index do
-  use Sample.Ported, with: ~w|kvx n2o nitro client|a
+  use N2O, with: [:kvx, :n2o, :nitro]
 
   alias :nitro, as: NITRO
   alias :n2o,   as: N2O
