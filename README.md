@@ -29,8 +29,8 @@ Notes
 Credits
 -------
 
-* Aleksei Matiushkin @am-kantox
-* Yevhenii Kurtov @lessless
-* Maxim Sokhatsky @5HT
+* Aleksei Matiushkin [am-kantox](https://github.com/am-kantox)
+* Yevhenii Kurtov [lessless](https://github.com/lessless)
+* Maxim Sokhatsky [5HT](https://github.com/5HT)
 
 OM A HUM
