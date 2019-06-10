@@ -21,7 +21,7 @@ $ iex -S mix
 
 Then open `https://localhost:8001/app/index.htm`
 
-Press
+Notes
 -----
 
 * [2019-06-10 N2O MIX](https://tonpa.guru/stream/2019/2019-06-10%20N2O%20MIX.htm)
