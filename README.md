@@ -21,11 +21,16 @@ $ iex -S mix
 
 Then open `https://localhost:8001/app/index.htm`
 
+Notes
+-----
+
+* [2019-06-10 N2O MIX](https://tonpa.guru/stream/2019/2019-06-10%20N2O%20MIX.htm)
+
 Credits
 -------
 
-* Aleksei Matiushkin
-* Yevhenii Kurtov
-* Maxim Sokhatsky
+* Aleksei Matiushkin [am-kantox](https://github.com/am-kantox)
+* Yevhenii Kurtov [lessless](https://github.com/lessless)
+* Maxim Sokhatsky [5HT](https://github.com/5HT)
 
 OM A HUM
