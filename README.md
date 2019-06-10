@@ -24,6 +24,7 @@ Then open `https://localhost:8001/app/index.htm`
 Credits
 -------
 
+* Aleksei Matiushkin
 * Yevhenii Kurtov
 * Maxim Sokhatsky
 
