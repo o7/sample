@@ -5,7 +5,8 @@ defmodule Sample.Mixfile do
   def deps,
     do: [
       {:cowboy, "~> 2.5"},
-      {:gproc, github: "voxoz/gproc"},
+      {:rocksdb, github: "voxoz/rocks"},
+      {:gproc,   github: "voxoz/gproc"},
       {:n2o,   github: "synrc/n2o"},
       {:kvx,   github: "synrc/kvx"},
       {:nitro, github: "synrc/nitro"}

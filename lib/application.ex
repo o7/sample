@@ -4,6 +4,7 @@ defmodule Sample.Application do
 
   def start(_,_) do
     start_cowboy()
+    :kvx.join()
     Supervisor.start_link([], [strategy: :one_for_one, name: Sample.Supervisor])
   end
 

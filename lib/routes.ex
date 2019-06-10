@@ -5,7 +5,6 @@ defmodule Sample.Routes do
   def finish(state, cx), do: {:ok, state, cx}
   def init(state, ctx) do
       %{path: p} = cx(ctx,:req)
-      IO.inspect(route_prefix(p))
       {:ok, state, cx(ctx, path: p, module: route_prefix(p))}
   end
 
