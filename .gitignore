@@ -1,9 +1,9 @@
-/_build/
-/cover/
-/deps/
-/doc/
+/_build
 /.fetch
+/cover
+/deps
+/doc
+/rocksdb
 erl_crash.dump
-*.ez
 sample-*.tar
-mix.lock
+*.ez
