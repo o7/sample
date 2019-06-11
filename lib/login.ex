@@ -8,8 +8,8 @@ defmodule Sample.Login do
   end
 
   def event(:login) do
-      user = NITRO.to_list(:nitro.q(:user))
-      room = NITRO.to_binary(:nitro.q(:pass))
+      user = NITRO.to_list(NITRO.q(:user))
+      room = NITRO.to_binary(NITRO.q(:pass))
       N2O.user(user)
       N2O.session(:room,room)
       NITRO.redirect(["/app/index.htm?room=",room])
