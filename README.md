@@ -8,7 +8,7 @@ Features
 
 * Usage Example of N2O, KVX, NITRO
 * RocksDB support out of the box
-* As minimal as possible
+* Size is 100 LOC
 
 Prerequisits
 ---
