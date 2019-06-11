@@ -5,7 +5,7 @@ defmodule Sample.Index do
       room = N2O.session(:room)
       KVX.save(KVX.writer(NITRO.to_binary(room)))
       N2O.reg({:topic,room})
-      N2O.reg(:n2o.sid())
+      N2O.reg(N2O.sid())
       NITRO.clear (:history)
       NITRO.update(:upload, upload())
       NITRO.update(:heading, h2(id: :heading, body: room))
