@@ -37,6 +37,7 @@ Credits
 -------
 
 * Aleksei Matiushkin [am-kantox](https://github.com/am-kantox)
+* Dmitry Bushmelev [b0oh](https://github.com/b0oh)
 * Yevhenii Kurtov [lessless](https://github.com/lessless)
 * Maxim Sokhatsky [5HT](https://github.com/5HT)
 
