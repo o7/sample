@@ -10,15 +10,15 @@ Features
 * RocksDB support out of the box
 * Size is 100 LOC
 
-Prerequisits
+Prerequisites
 ---
 
-* cmake
+* cmake (rocksdb)
 
 Run
 ---
 
-Before running, [fullchain.pem](./priv/ssl/fullchain.pem) certificate have to be added into a system.
+Before running, [fullchain.pem](./priv/ssl/fullchain.pem) certificate has to be added into a system.
 
 ```
 $ mix deps.get
