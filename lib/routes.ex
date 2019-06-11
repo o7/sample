@@ -1,22 +1,21 @@
 defmodule Sample.Routes do
+  require N2O
 
-  import N2O
+  def finish(state, context), do: {:ok, state, context}
 
-  def finish(state, cx), do: {:ok, state, cx}
-  def init(state, ctx) do
-      %{path: p} = cx(ctx,:req)
-      {:ok, state, cx(ctx, path: p, module: route_prefix(p))}
+  def init(state, context) do
+    %{path: path} = N2O.cx(context, :req)
+    {:ok, state, N2O.cx(context, path: path, module: route_prefix(path))}
   end
 
   defp route_prefix(<<"/ws/", p::binary>>), do: route(p)
-  defp route_prefix(<<"/", p::binary>>),    do: route(p)
-  defp route_prefix(p),                     do: route(p)
+  defp route_prefix(<<"/", p::binary>>), do: route(p)
+  defp route_prefix(path), do: route(path)
 
-  defp route(<<>>),                         do: Sample.Login
-  defp route(<<"index", _::binary>>),       do: Sample.Index
-  defp route(<<"login", _::binary>>),       do: Sample.Login
-  defp route(<<"app/index", _::binary>>),   do: Sample.Index
-  defp route(<<"app/login", _::binary>>),   do: Sample.Login
-  defp route(_),                            do: Sample.Login
-
+  defp route(<<>>), do: Sample.Login
+  defp route(<<"index", _::binary>>), do: Sample.Index
+  defp route(<<"login", _::binary>>), do: Sample.Login
+  defp route(<<"app/index", _::binary>>), do: Sample.Index
+  defp route(<<"app/login", _::binary>>), do: Sample.Login
+  defp route(_), do: Sample.Login
 end

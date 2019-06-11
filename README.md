@@ -10,8 +10,15 @@ Features
 * RocksDB support out of the box
 * As minimal as possible
 
+Prerequisits
+---
+
+* cmake
+
 Run
 ---
+
+Before running, [fullchain.pem](./priv/ssl/fullchain.pem) certificate have to be added into a system.
 
 ```
 $ mix deps.get
