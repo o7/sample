@@ -1,6 +1,7 @@
 use Mix.Config
 
 config :n2o,
+  pickler: :n2o_secret,
   protocols: [:n2o_nitro, :n2o_ftp],
   routes: Sample.Routes
 

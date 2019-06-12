@@ -5,7 +5,7 @@ defmodule Sample.Index do
 
   def event(:init) do
     room = N2O.session(:room)
-    KVX.save(KVX.writer(NITRO.to_binary(room)))
+    KVX.ensure(writer(id: room))
     N2O.reg({:topic, room})
     N2O.reg(N2O.sid())
     NITRO.clear(:history)
