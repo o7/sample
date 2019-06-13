@@ -42,7 +42,7 @@ defmodule Sample.Index do
 
   def event({:client, {user, message}}) do
     NITRO.wire(jq(target: :message, method: [:focus, :select]))
-    NITRO.insert_top(:history, message(body: [author(body: user), message]))
+    NITRO.insert_top(:history, message(body: [author(body: user), NITRO.jse(message)]))
   end
 
   def event(unexpected) do
