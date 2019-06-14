@@ -27,17 +27,14 @@ defmodule Sample.Index do
   end
 
   def event(:chat) do
-    room = N2O.session(:room)
-    user = N2O.user()
-    message = NITRO.q(:message)
+    chat()
+  end
 
-    room
-    |> KVX.writer()
-    |> writer(args: {:msg, KVX.seq([], []), user, message})
-    |> KVX.add()
-    |> KVX.save()
-
-    N2O.send({:topic, room}, client(data: {user, message}))
+  def event(ftp(sid: s, filename: f, status: {:event, :stop})) do
+    name = hd(:lists.reverse(:string.tokens(NITRO.to_list(f), '/')))
+    link = link(href: :erlang.iolist_to_binary(["/app/", s, "/", name]), body: name)
+    :erlang.put(:message, NITRO.render(link))
+    chat()
   end
 
   def event({:client, {user, message}}) do
@@ -49,5 +46,19 @@ defmodule Sample.Index do
     unexpected
     |> inspect()
     |> Logger.warn()
+  end
+
+  def chat() do
+    room = N2O.session(:room)
+    user = N2O.user()
+    message = NITRO.q(:message)
+
+    room
+    |> KVX.writer()
+    |> writer(args: {:msg, KVX.seq([], []), user, message})
+    |> KVX.add()
+    |> KVX.save()
+
+    N2O.send({:topic, room}, client(data: {user, message}))
   end
 end
