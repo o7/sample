@@ -2,7 +2,6 @@
 /.fetch
 /cover
 /deps
-/doc
 /rocksdb
 erl_crash.dump
 sample-*.tar
