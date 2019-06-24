@@ -1,11 +1,11 @@
 defmodule Sample.Index do
-  use N2O, with: [:kvx, :n2o, :nitro]
+  use N2O, with: [:kvs, :n2o, :nitro]
 
   require Logger
 
   def event(:init) do
     room = N2O.session(:room)
-    KVX.ensure(writer(id: room))
+    KVS.ensure(writer(id: room))
     N2O.reg({:topic, room})
     N2O.reg(N2O.sid())
     NITRO.clear(:history)
@@ -15,7 +15,7 @@ defmodule Sample.Index do
     NITRO.update(:send, button(id: :send, body: "Chat", postback: :chat, source: [:message]))
 
     room
-    |> KVX.all()
+    |> KVS.all()
     |> Enum.each(fn {:msg, _, user, message} ->
       event({:client, {user, message}})
     end)
@@ -52,10 +52,10 @@ defmodule Sample.Index do
     user = N2O.user()
 
     room
-    |> KVX.writer()
-    |> writer(args: {:msg, KVX.seq([], []), user, message})
-    |> KVX.add()
-    |> KVX.save()
+    |> KVS.writer()
+    |> writer(args: {:msg, KVS.seq([], []), user, message})
+    |> KVS.add()
+    |> KVS.save()
 
     N2O.send({:topic, room}, client(data: {user, message}))
   end
