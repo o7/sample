@@ -5,6 +5,8 @@ defmodule Sample.Mixfile do
     [
       app: :sample,
       version: "6.6.6",
+      description: "SAMPLE Elixir Application",
+      package: package(),
       elixir: "~> 1.7",
       deps: deps()
     ]
@@ -12,7 +14,7 @@ defmodule Sample.Mixfile do
 
   def package do
     [
-      files: ~w(doc include lib src mix.exs LICENSE),
+      files: ~w(doc lib mix.exs LICENSE),
       licenses: ["ISC"],
       maintainers: ["Namdak Tonpa"],
       name: :sample,
