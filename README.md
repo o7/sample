@@ -26,7 +26,7 @@ $ mix compile
 $ iex -S mix
 ```
 
-Then open `https://localhost:8001/app/index.htm`
+Then open `https://localhost:8002/app/index.htm`
 
 Notes
 -----
