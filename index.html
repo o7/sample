@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Maxim Sokhatsky" />
+    <title>SAMPLE</title>
+    <link rel="stylesheet" href="https://synrc.space/synrc.css" />
+</head>
+
+<body>
+
+<nav>
+    <a href='https://n2o.space/'>SPACE</a>
+    <a href='https://sample.n2o.space' style="background:#ededed;">SAMPLE</a>
+    <a href='https://sample-2.n2o.space:8001/app/login.htm'>ADMIN</a>
+</nav>
+
+<header>
+    <a href="https://github.com/o7/sample"><img src="https://synrc.space/images/Synrc Neo.svg?v=1"></a>
+    <h1>SAMPLE</h1>
+</header>
+
+<aside>
+    <article>
+        <section>
+            <h3>SYNOPSIS</h3>
+            <div>SAMPLE is a simple WebSocket application with
+                 GPROC or SYN as a message bus.
+                 Check out demo at <a href="https://sample.n2o.space/index.htm">ns.synrc.com:8001</a>.</div>
+        </section>
+
+        <section>
+            <a name=plugin><h3>MANUAL</h3></a>
+            <div><ul>
+           <li><a href="man/sample.htm">SAMPLE</a></font></li>
+           <li><a href="man/index.htm">INDEX</a></font></li>
+           <li><a href="man/login.htm">LOGIN</a></font></li>
+            </ul></div>
+            <br>
+            <div>
+                NOV 2018 &copy; <a href="https://github.com/5HT">5HT</a> ISC
+            </div>
+        <figure>
+        <code>
+ $ mad app web joe
+ $  cd joe
+ $ mad dep com pla
+ $ mad rep
+ >
+
+ $ open https://127.0.0.1:8001/app/index.htm
+
+ $ mad bun beam joe
+ $ mad bun script joe
+        </code></figure>
+
+        </section>
+    </article>
+</aside>
+<main>
+
+    <section>
+        <a name=sample><h3>REBAR3</h3></a>
+
+        <figure>
+            <figcaption>Picture 1. OTP tools</figcaption>
+            <code>
+ $ git clone git://github.com/synrc/sample
+ $ cd sample
+ $ rebar3 shell
+ $ open https://127.0.0.1:8001/app/index.htm
+            </code>
+        </figure>
+    </section>
+    <section>
+        <a name=sample><h3>START</h3></a>
+
+        <figure>
+            <figcaption>Picture 2. Minimal Configuration</figcaption>
+            <code>
+ {deps, [{gproc,  ".*", {git, "git://github.com/voxoz/gproc",   []}},
+         {cowboy, ".*", {git, "git://github.com/voxoz/cowboy2", []}},
+         {nitro,  ".*", {git, "git://github.com/synrc/nitro",   []}},
+         {n2o,    ".*", {git, "git://github.com/synrc/n2o",     []}},
+         {kvs,    ".*", {git, "git://github.com/synrc/kvs",     []}}
+        ]}.
+            </code>
+        </figure>
+
+        <figure>
+            <figcaption>Picture 3. Development Release</figcaption>
+            <code>
+ Eshell V10.1.1  (abort with ^G)
+ 1> application:which_applications().
+ [{review,"REVIEW WS Application","5.11"},
+  {nitro,"NITRO HTML5 DSL","3.10"},
+  {syn,"SYN QoS=0 Pub-Sub","1.6.3"},
+  {cowboy,"COWBOY Small, fast, modern HTTP server.","2.5.0"},
+  {ranch,"RANCH Socket TCP protocols.","1.6.2"},
+  {ssl,"Erlang/OTP SSL application","9.0.3"},
+  {public_key,"Public key infrastructure","1.6.2"},
+  {kvs,"KVS Abstract Term Database","5.10"},
+  {cowlib,"COWLIB Web protocols.","2.6.0"},
+  {crypto,"CRYPTO","4.3.3"},
+  {asn1,"The Erlang ASN1 compiler version 5.0.7","5.0.7"},
+  {n2o,"N2O DAS MQTT TCP WebSocket","5.11"},
+  {inets,"INETS  CXC 138 49","7.0.2"},
+  {mnesia,"MNESIA  CXC 138 12","4.15.5"},
+  {syntax_tools,"Syntax tools","2.1.6"},
+  {compiler,"ERTS  CXC 138 10","7.2.6"},
+  {stdlib,"ERTS  CXC 138 10","3.6"},
+  {kernel,"ERTS  CXC 138 10","6.1"}]
+            </code>
+        </figure>
+    </section>
+
+    <section>
+        <a name=sample><h3>Sample Application</h3></a>
+        <figure>
+            <figcaption>Picture 3. N2O Review Application</figcaption>
+            <img src="https://n2o.space/img/n2o-ws.png">
+        </figure>
+    </section>
+
+    <section>
+        <a name=plugin><h3>Related Documents</h3></a>
+        <div>
+        <ul>
+           <li><a href="https://n2o.space/articles/n2o.htm">N2O: PROTOCOL</a></li>
+           <li><a href="https://n2o.space/articles/web.htm">N2O: SERVER</a></li>
+           <li><a href="https://n2o.space/articles/history.htm">N2O: HISTORY</a></li>
+           <li><a href="https://5ht.co/spawnproc.htm">N2O: PRIVATBANK</a></li>
+        </ul></div>
+    </section>
+</main>
+
+<footer>
+    Made with <span class="heart">❤</span> to N2O
+</footer>
+
+</body>
+</html>
