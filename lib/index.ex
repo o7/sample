@@ -4,7 +4,7 @@ defmodule Sample.Index do
   require Logger
 
   def event(:init) do
-    room = N2O.session(:room)
+    room = Sample.Application.room
     KVS.ensure(writer(id: room))
     N2O.reg({:topic, room})
     N2O.reg(N2O.sid())
@@ -27,6 +27,7 @@ defmodule Sample.Index do
   end
 
   def event(:chat) do
+    IO.inspect NITRO.q(:message)
     chat(NITRO.q(:message))
   end
 
@@ -48,7 +49,7 @@ defmodule Sample.Index do
   end
 
   def chat(message) do
-    room = N2O.session(:room)
+    room = Sample.Application.room
     user = N2O.user()
 
     room

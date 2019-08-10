@@ -1,5 +1,14 @@
 defmodule Sample.Application do
   use Application
+  use N2O
+
+  def room() do
+    case N2O.session(:room) do
+         '' -> '/root'
+         "" -> '/root'
+          x -> x
+    end
+  end
 
   def start(_, _) do
     initialize()
