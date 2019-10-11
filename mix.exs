@@ -31,11 +31,11 @@ defmodule Sample.Mixfile do
     [
       {:ex_doc, "~> 0.20.2", only: :dev},
       {:cowboy, "~> 2.5.0"},
-      {:rocksdb, "~> 1.2.0"},
-      {:n2o, "~> 6.8.1"},
+      {:rocksdb, "~> 1.3.2"},
+      {:n2o, "~> 6.10.0"},
       {:syn, "~> 1.6.3"},
-      {:kvs, "~> 6.7.4"},
-      {:nitro, "~> 4.7.3"},
+      {:kvs, "~> 6.9.2"},
+      {:nitro, "~> 4.10.0"},
     ]
   end
 end
