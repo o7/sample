@@ -4,7 +4,7 @@ defmodule Sample.Mixfile do
   def project() do
     [
       app: :sample,
-      version: "0.8.1",
+      version: "0.10.0",
       description: "SAMPLE Elixir Application",
       package: package(),
       elixir: "~> 1.7",

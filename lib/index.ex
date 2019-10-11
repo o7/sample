@@ -8,7 +8,7 @@ defmodule Sample.Index do
     KVS.ensure(writer(id: room))
     N2O.reg({:topic, room})
     N2O.reg(N2O.sid())
-    NITRO.clear(:history)
+#    NITRO.clear(:history)
     NITRO.update(:upload, upload())
     NITRO.update(:heading, h2(id: :heading, body: room))
     NITRO.update(:logout, button(id: :logout, postback: :logout, body: "Logout"))
@@ -27,7 +27,6 @@ defmodule Sample.Index do
   end
 
   def event(:chat) do
-    IO.inspect NITRO.q(:message)
     chat(NITRO.q(:message))
   end
 
