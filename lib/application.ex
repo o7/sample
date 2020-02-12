@@ -29,7 +29,7 @@ defmodule Sample.Application do
 
   def env(_app) do
     [
-      {:port, :application.get_env(:n2o, :port, 8050)}
+      {:port, :application.get_env(:n2o, :port, 8002)}
     ]
   end
 
