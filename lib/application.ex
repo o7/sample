@@ -20,7 +20,6 @@ defmodule Sample.Application do
       {:_,
        [
          {'/ws/[...]', :n2o_cowboy2, []},
-         {'/rest/track', :rest_onlyoffice, []},
          {'/bin/[...]', :cowboy_static, {:dir, "priv/storage", []}},
          {'/app/[...]', :cowboy_static, {:dir, "priv/static", []}}
        ]}
@@ -34,9 +33,8 @@ defmodule Sample.Application do
   end
 
   def initialize() do
-    IO.inspect :cowboy.start_clear(:http, env(:samaple), %{env: %{dispatch: points()}})
+    IO.inspect :cowboy.start_clear(:http, env(:sample), %{env: %{dispatch: points()}})
     :kvs.join()
-    :syn.init()
   end
 
 end

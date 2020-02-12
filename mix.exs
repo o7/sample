@@ -30,12 +30,12 @@ defmodule Sample.Mixfile do
   def deps() do
     [
       {:ex_doc, "~> 0.20.2", only: :dev},
-      {:cowboy, "~> 2.5.0"},
+      {:cowboy, "~> 2.7.0"},
       {:rocksdb, "~> 1.3.2"},
-      {:n2o, "~> 6.10.0"},
-      {:syn, "~> 1.6.3"},
-      {:kvs, "~> 6.9.2"},
-      {:nitro, "~> 4.10.0"},
+      {:n2o, "~> 7.2.2"},
+      {:syn, "~> 2.1.0"},
+      {:kvs, "~> 7.1.1"},
+      {:nitro, "~> 5.1.7"}
     ]
   end
 end
